@@ -1,3 +1,8 @@
+'''This is a simple tennis game created with the use of Pygame module. 
+
+Players hit the ball using rackets which can move vertically. The game lasts until one of the players gets the score of 6 points
+winning the game.'''
+
 import pygame
 import time
 
@@ -67,7 +72,8 @@ class Ball(pygame.sprite.Sprite):
     
     def hit_reaction(self, smth):
 
-        '''Reaction of the ball for hitting the racket: hitting sound, reversing x increment and changing y increment depending on the hit.'''
+        '''Reaction of the ball for hitting the racket: hitting sound, reversing x increment and changing y increment depending on
+        the hit.'''
 
         self.hit_sound()
         self.reverse_increment_x()
@@ -77,14 +83,16 @@ class Ball(pygame.sprite.Sprite):
 
         '''Check if the ball is out of the field and the point goes to player1.'''
 
-        if ((self.rect.left > 1497) or (((self.rect.bottom < 156) or (self.rect.top > 700)) and (self.rect.left > field.rect.center[0]))):
+        if ((self.rect.left > 1497) or (((self.rect.bottom < 156) or (self.rect.top > 700)) and 
+                                        (self.rect.left > field.rect.center[0]))):
             return True
 
     def out_right(self, field):
 
         '''Check if the ball is out of the field and the point goes to player2.'''
 
-        if ((self.rect.right < 297) or (((self.rect.bottom < 156) or (self.rect.top > 700)) and (self.rect.right < field.rect.center[0]))):
+        if ((self.rect.right < 297) or (((self.rect.bottom < 156) or (self.rect.top > 700)) and 
+                                        (self.rect.right < field.rect.center[0]))):
             return True
 
     def reset_pos(self, new_loc):
@@ -153,7 +161,8 @@ class Score(pygame.sprite.Sprite):
 
         '''Refreshing the score with the Players' points.'''
 
-        self.textsurface = self.myfont.render('Player 1 points: {}     Player 2 points: {}'.format(self.points1, self.points2), False, (255, 255, 255))
+        self.textsurface = self.myfont.render('Player 1 points: {}     Player 2 points: {}'.format(self.points1, self.points2), 
+                                              False, (255, 255, 255))
         screen.blit(self.textsurface, (20, 20))
 
     def plus_point1(self):
