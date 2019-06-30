@@ -1,5 +1,6 @@
 # tennis_game
 A simple tennis game created with the use of Pygame module.  
+  
 Author: Yaroslava Tkachuk, BSc student of the University of Silesia, Katowice, Poland.  
 
 Files:  
